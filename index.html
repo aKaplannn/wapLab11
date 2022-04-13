@@ -45,8 +45,17 @@
                        server.listen(8000);<br><br><br>
 
                        <strong>
-                           Lab 10 Solution 2 - 3
-                       </strong><br><br>No, Node.js does not have window object.
+                           Lab 11 Question 2 Solution 3
+                       </strong><br><br>
+                       const fs = require('fs');<br>
+                       const server = require('http').createServer();<br>
+                       server.on('request', (req, res) => { fs.createReadStream("./tiles.jpg").pipe(res); });<br>
+                       server.listen(9000);<br><br><br>
+
+                       <strong>
+                           Lab 11 Question 2 Solution 4
+                       </strong><br><br>
+                       require('http').createServer((req, res) => { require('fs').createReadStream('./tiles.jpg').pipe(res); }).listen(9090, () => console.log("listening to 9090"));
                    </span>
 </body>
 </html>
